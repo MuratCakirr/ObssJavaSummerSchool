@@ -1,0 +1,30 @@
+package tr.com.obss.jss.petclinic.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
+
+@Setter
+@Getter
+@SuperBuilder
+@NoArgsConstructor
+@MappedSuperclass
+public class Person extends BaseEntity{
+
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String surname;
+
+    @Column(length = 500)
+    private String address;
+
+    private String city;
+}
